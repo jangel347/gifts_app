@@ -22,7 +22,7 @@ public class UserServiceImpl implements UserService{
 
     @Override
     @Transactional(readOnly = true)
-    public Optional<User> listById(Long id) {
+    public Optional<User> getById(Long id) {
         return repository.findById(id);
     }
 
