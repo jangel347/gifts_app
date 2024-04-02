@@ -1,22 +1,11 @@
-package com.jestean.springproject.msvc.gifts.models.entities;
+package com.jestean.springproject.msvc.usuarios.models.entities;
 
-import jakarta.persistence.*;
-import jakarta.validation.constraints.NotEmpty;
-import jakarta.validation.constraints.NotNull;
-
-@Entity
-@Table(name = "gifts")
 public class Gift {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @NotEmpty
     private String name; 
     private String description;
     private String links;
-    @NotNull
     private int priority;
-    @NotNull
     private Long user_id;
     public Long getUser_id() {
         return user_id;

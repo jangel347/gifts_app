@@ -4,11 +4,18 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotEmpty;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name="users")
 public class User {
+
+    public User(){
+        gifts = new ArrayList<>();
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -27,6 +34,17 @@ public class User {
     @NotEmpty
     @Temporal(TemporalType.DATE)
     private Date birth_date;
+
+    @Transient
+    private List<Gift> gifts;
+
+    public List<Gift> getGifts() {
+        return gifts;
+    }
+
+    public void setGifts(List<Gift> gifts) {
+        this.gifts = gifts;
+    }
 
     /*GETTERS AND SETTERS*/
     public Long getId() {
