@@ -15,7 +15,8 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>msvc-usuarios</module>
+        <module>msvc-users</module>
+        <module>msvc-gifts</module>
     </modules>
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
