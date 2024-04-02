@@ -1,6 +1,8 @@
 package com.jestean.springproject.msvc.usuarios.models.entities;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotEmpty;
 
 import java.util.Date;
 
@@ -11,11 +13,18 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @NotEmpty
     private String name;
 
+    @NotEmpty
+    @Email
     @Column(unique = true)
     private String email;
+
+    @NotEmpty
     private String password;
+    
+    @NotEmpty
     @Temporal(TemporalType.DATE)
     private Date birth_date;
 
